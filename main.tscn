@@ -1,0 +1,180 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxcb4ugrwjt8r"]
+
+[ext_resource type="PackedScene" uid="uid://bljpkugn1o5b8" path="res://corredor/corredor.tscn" id="1_3cip5"]
+[ext_resource type="PackedScene" uid="uid://dpa7w7oxu31em" path="res://player/player_ship.tscn" id="2_64t0w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_63l2a"]
+
+[sub_resource type="Sky" id="Sky_yfoee"]
+sky_material = SubResource("ProceduralSkyMaterial_63l2a")
+
+[sub_resource type="Environment" id="Environment_p88jf"]
+background_mode = 2
+sky = SubResource("Sky_yfoee")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_py4ms"]
+size = Vector3(1, 0.227242, 5.15882)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_67oer"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lvilo"]
+size = Vector3(1.93862, 1.96313, 0.202846)
+
+[node name="main" type="Node3D"]
+
+[node name="corredor" parent="." instance=ExtResource("1_3cip5")]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p88jf")
+
+[node name="lights_up" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights_up"]
+transform = Transform3D(-0.00356872, 0.999885, -0.0147406, -0.0101839, 0.0147036, 0.99984, 0.999942, 0.00371827, 0.0101303, 0.0112209, 0.563029, -0.0894644)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights_up"]
+transform = Transform3D(-0.00356872, 0.999885, -0.0147406, -0.0101839, 0.0147036, 0.99984, 0.999942, 0.00371827, 0.0101303, 0.0112209, 0.563029, 0.733343)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="lights_up"]
+transform = Transform3D(-0.00356872, 0.999885, -0.0147406, -0.0101839, 0.0147036, 0.99984, 0.999942, 0.00371827, 0.0101303, 0.0112209, 0.563029, 1.6044)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="lights_up"]
+transform = Transform3D(-0.00356872, 0.999885, -0.0147406, -0.0101839, 0.0147036, 0.99984, 0.999942, 0.00371827, 0.0101303, 0.0112209, 0.563029, 2.27596)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="lights_up"]
+transform = Transform3D(-0.00356872, 0.999885, -0.0147406, -0.0101839, 0.0147036, 0.99984, 0.999942, 0.00371827, 0.0101303, 0.0112209, 0.563029, 2.84256)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="lights_down" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights_down"]
+transform = Transform3D(0.00356587, -0.999881, 0.0150199, 0.0101849, -0.0149829, -0.999836, 0.999942, 0.00371826, 0.0101303, 0.0112209, -0.116712, -0.0894644)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights_down"]
+transform = Transform3D(0.00356587, -0.999881, 0.0150199, 0.0101849, -0.0149829, -0.999836, 0.999942, 0.00371826, 0.0101303, 0.0112209, -0.116712, 0.63223)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="lights_down"]
+transform = Transform3D(0.00356587, -0.999881, 0.0150199, 0.0101849, -0.0149829, -0.999836, 0.999942, 0.00371826, 0.0101303, 0.0112209, -0.116712, 1.50567)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="lights_down"]
+transform = Transform3D(0.00356587, -0.999881, 0.0150199, 0.0101849, -0.0149829, -0.999836, 0.999942, 0.00371826, 0.0101303, 0.0112209, -0.116712, 2.41418)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="lights_down"]
+transform = Transform3D(0.00356587, -0.999881, 0.0150199, 0.0101849, -0.0149829, -0.999836, 0.999942, 0.00371826, 0.0101303, 0.0112209, -0.116712, 3.18516)
+spot_range = 1.11383
+spot_angle = 89.8115
+
+[node name="player_ship" parent="." instance=ExtResource("2_64t0w")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.050355, 2.13241)
+
+[node name="floor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.246576, 1.97944)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_py4ms")
+
+[node name="wall" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.76837e-07)
+
+[node name="shape" type="MeshInstance3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 0.00148364, 0.999999, 0, -0.999999, 0.00148364, 0, 0, 3.42738)
+mesh = SubResource("PlaneMesh_67oer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0302439, 3.45845)
+shape = SubResource("BoxShape3D_lvilo")
+
+[node name="wall2" type="Node3D" parent="."]
+transform = Transform3D(-0.994651, 0, 0.103296, 0, 1, 0, -0.103296, 0, -0.994651, 0, 0, 3.01207)
+
+[node name="shape" type="MeshInstance3D" parent="wall2"]
+transform = Transform3D(1, 0, 0, 0, 0.00148364, 0.999999, 0, -0.999999, 0.00148364, 0, 0, 3.42738)
+visible = false
+mesh = SubResource("PlaneMesh_67oer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0302439, 3.45845)
+shape = SubResource("BoxShape3D_lvilo")
+
+[node name="wall3" type="Node3D" parent="."]
+transform = Transform3D(0.0201884, 0, 0.679151, 0, 1, 0, -3.46314, 0, 0.00395912, -1.77293, 0, 1.4517)
+
+[node name="shape" type="MeshInstance3D" parent="wall3"]
+transform = Transform3D(1, 0, 1.45519e-11, 0, 0.00148364, 0.999999, 0, -0.999999, 0.00148364, 1.49012e-08, 0, 3.42738)
+visible = false
+mesh = SubResource("PlaneMesh_67oer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0302439, 3.45845)
+shape = SubResource("BoxShape3D_lvilo")
+
+[node name="wall4" type="Node3D" parent="."]
+transform = Transform3D(-0.0189799, 0, -0.679152, 0, 1, 0, 3.46314, 0, -0.00372214, 1.77042, 0, 1.4517)
+
+[node name="shape" type="MeshInstance3D" parent="wall4"]
+transform = Transform3D(1, 0, 1.45519e-11, 0, 0.00148364, 0.999999, 0, -0.999999, 0.00148364, 1.49012e-08, 0, 3.42738)
+visible = false
+mesh = SubResource("PlaneMesh_67oer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0302439, 3.45845)
+shape = SubResource("BoxShape3D_lvilo")
+
+[node name="techo" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.690359, 1.97944)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="techo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="techo/StaticBody3D"]
+shape = SubResource("BoxShape3D_py4ms")
+
+[node name="t1" type="Node3D" parent="."]
+transform = Transform3D(0.423978, -0.552621, 0, 0.281125, 0.833433, 0, 0, 0, 1, -0.463325, 0.504953, 1.97944)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="t1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="t1/StaticBody3D"]
+shape = SubResource("BoxShape3D_py4ms")
+
+[node name="t2" type="Node3D" parent="."]
+transform = Transform3D(0.388696, 0.645124, 0, -0.328183, 0.764078, 0, 0, 0, 1, 0.415975, 0.504953, 1.97944)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="t2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="t2/StaticBody3D"]
+shape = SubResource("BoxShape3D_py4ms")
